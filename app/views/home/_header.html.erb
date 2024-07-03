@@ -9,6 +9,9 @@
         <li class="nav-item">
           <%= link_to "About", about_path, class: "nav-link active" %>
         </li>
+        <li class="nav-item">
+            <%= link_to "Articles", articles_path, class: "nav-link active" %>
+        </li>
         <% if user_signed_in? %>
           <li class="nav-item">
             <%= link_to "Edit profile", edit_user_registration_path, class: "nav-link active" %>
@@ -16,16 +19,13 @@
           <li class="nav-item">
             <%= link_to "Log out", destroy_user_session_path, data: { turbo_method: :delete, turbo_confirm: "Are you sure?" }, class: "nav-link active" %>
           </li>
+
           <% if current_user.admin? %>
             <li class="nav-item">
               <%= link_to "Manage Users", users_path, class: "nav-link active" %>
             </li>
           <% end %>
-          <% if current_user.editor? || current_user.admin? %>
-            <li class="nav-item">
-              <%= link_to "Articles", articles_path, class: "nav-link active" %>
-            </li>
-          <% end %>
+         
         <% end %>
         <% unless user_signed_in? %>
           <li class="nav-item">

@@ -5,10 +5,15 @@
 <div id="articles">
   <% @articles.each do |article| %>
     <%= render article %>
+    <% if user_signed_in? %>
     <p>
       <%= link_to "Show this article", article %>
     </p>
+    <%end%>
   <% end %>
 </div>
-
-<%= link_to "New article", new_article_path %>
+<% if user_signed_in? %>
+ <div>
+   <%= link_to "New article", new_article_path %>
+ </div>
+<%end%>

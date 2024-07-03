@@ -10,11 +10,13 @@ class Ability
       can :read, Article
       can :create, Article
       can :update, Article
+      can :destroy, Article
     elsif user.user?
       can :read, Article
       can :create, Article
     else
       can :read, Article
+       can :create, Article
     end
   end
 end

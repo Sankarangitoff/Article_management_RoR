@@ -11,7 +11,7 @@
   <div class="field">
     <%= f.label :password %>
     <% if @minimum_password_length %>
-      <em>(<%= @minimum_password_length %> characters minimum)</em>
+    <em>(<%= @minimum_password_length %> characters minimum)</em>
     <% end %><br />
     <%= f.password_field :password, autocomplete: "new-password" %>
   </div>
@@ -23,7 +23,7 @@
 
   <div class="field">
     <%= f.label :role %><br />
-    <%= f.select :role, User.roles.keys.map { |role| [role.humanize, role] } %>
+    <%= f.select :role, User.roles.keys.map { |role| [role.humanize, role] }, prompt: "Select role" %>
   </div>
 
   <div class="actions">
