@@ -1,1 +1,7 @@
 <h1>Welcome to Article Management App</h1>
+
+<% if user_signed_in? %>
+  <p>Welcome, <%= current_user.email %>!</p>
+<% else %>
+  <p>Welcome, Guest!</p>
+<%end%>
